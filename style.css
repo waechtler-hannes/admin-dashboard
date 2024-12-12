@@ -104,7 +104,7 @@
 
 :root {
     --main-blue: rgb(63, 145, 211);
-    --main-grey: rgb(211, 223, 240);
+    --main-grey: rgb(214, 225, 241);
   }
 
 /************************* Global settings *************************/
@@ -115,6 +115,10 @@
     box-sizing: border-box;
     font-family: "Roboto", sans-serif;
     font-weight: bold;
+}
+
+.layout-container {
+    background-color: var(--main-grey);
 }
 
 a {
@@ -188,6 +192,7 @@ a {
 
 .header {
     grid-area: header;
+    background-color: white;
     padding: 12px 40px;
     box-shadow: 0px -15px 15px 10px black;
     display: grid;
@@ -323,8 +328,9 @@ a {
     background-color: var(--main-grey);
     padding: 0px 25px 80px 20px;
     column-gap: 20px;
+    height: max-content;
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 2.5fr minmax(18rem, 1fr);
     grid-template-rows: repeat(2, max-content 1fr);
     grid-template-areas:
         "project-heading announcement-heading"
@@ -349,7 +355,7 @@ a {
     }
 }
 
-.main-content p {
+.main-content p, .main-content .separator {
     font-weight: normal;
     font-size: 1.1rem;
     color: rgb(107, 107, 107);
@@ -364,8 +370,12 @@ a {
 .card {
     background-color: white;
     border-radius: 0.5rem;
-    padding: 35px 20px;
+    padding: 40px 25px;
     box-shadow: 3px 3px 10px -5px rgb(97, 97, 97);
+}
+
+.main-content h4 {
+    margin-bottom: 0.2rem;
 }
 
 /* project-area */
@@ -392,7 +402,6 @@ a {
 
 .project.card h4 {
     font-size: 1.3rem;
-    margin-bottom: 5px;
 }
 
 /* project-card buttons */
@@ -446,6 +455,13 @@ a {
 
 .announcements {
     grid-area: announcement-area;
+    display: grid;
+    grid-auto-rows: min-content;
+}
+
+.separator {
+    border-top: 1px solid;
+    margin: 20px -5px;
 }
 
 /* Trending */
@@ -456,4 +472,20 @@ a {
 
 .trending {
     grid-area: trending-area;
+    display: grid;
+    grid-auto-rows: 1fr;
+    row-gap: 15px;
+}
+
+.trending-button {
+    display: flex;
+    align-items: center;
+}
+
+.trending .profile-picture {
+    height: 3.5rem;
+    width: 3.5rem;
+    border: 3px solid var(--main-blue);
+    border-radius: 2rem;
+    margin-right: 15px;
 }
