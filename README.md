@@ -1,1 +1,1 @@
-# admin-dashboard
+This is my sixth project, its a admin-dashboard with lots of grid-based elements. I made it a little bit responsive. Try it here: https://waechtler-hannes.github.io/admin-dashboard/
